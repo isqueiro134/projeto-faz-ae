@@ -47,9 +47,33 @@ header {
     background-color: #424242;
 }
 
-.active {
-    background-color: #FAFAFA;
-    color: #171717;
+.main-header {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 3rem;
+    margin: 7.5rem 38rem 0 70rem;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 11rem;
+    margin: 7.5rem 20rem 10rem 60rem;
+}
+
+.cards-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+}
+
+.card {
+    padding: 2rem;
+    color: white;
+    background-color: #5D5D5D;
+    border: 1px solid rgba(255, 255, 255, 0.95);
+    border-radius: 1rem;
 }
 
 /* Estilo do botão hambúrguer */
