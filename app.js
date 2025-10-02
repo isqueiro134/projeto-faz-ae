@@ -10,6 +10,10 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'src/html/home.html'));
 })
 
+app.get('/login', (req, res) => {
+    res.sendFile(path.join(__dirname, 'src/html/login.html'));
+})
+
 
 
 

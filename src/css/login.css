@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    font-family: "Roboto", sans-serif;
+}
+
+html {
+    font-size: 62.5%;
+    /* 10px */
+}
+
+header {
+    background-color: #0A0A0A;
+    padding: 1rem 1.8rem;
+    box-shadow: 0 0.2rem 0.5rem 0 #4f4f4f;
+}
+
+.nav-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bts-container {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 2.2rem;
+}
+
+.header-bts {
+    color: #FAFAFA;
+    background-color: #0A0A0A;
+    border: 1px;
+    border-radius: 1rem;
+    font-size: 1.8rem;
+    padding: 1rem;
+}
+
+.header-bts:hover {
+    background-color: #424242;
+}
+
+.active {
+    background-color: #FAFAFA;
+    color: #171717;
+}
+
+/* Estilo do botão hambúrguer */
+.menu-hamburguer {
+    display: block;
+    /* Garante que o botão aparece */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    position: relative;
+    z-index: 10;
+    /* Para ficar por cima de outros elementos */
+}
+
+.linha {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: #FAFAFA;
+    margin: 6px 0;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Estilo do menu de navegação */
+.menu-navegacao {
+    display: none;
+    /* Esconde o menu por padrão */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: fixed;
+    /* Posiciona o menu na tela */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.95);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+}
+
+.menu-navegacao.ativo {
+    display: flex;
+    /* Mostra o menu quando a classe 'ativo' é adicionada */
+}
+
+/* Animação do ícone ao abrir */
+.menu-hamburguer.ativo .linha:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.menu-hamburguer.ativo .linha:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-hamburguer.ativo .linha:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+.login-title {
+    display: flex;
+    justify-content: center;
+    margin-top: 110px;
+}
