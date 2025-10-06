@@ -1,0 +1,207 @@
+        /* CSS Fornecido por você */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+        body {
+            font-family: "Roboto", sans-serif;
+            background-color: #FAFAFA; /* Fundo claro para o corpo */
+            color: #171717;
+        }
+
+        html {
+            font-size: 62.5%;
+            /* 10px */
+        }
+
+        header {
+            background-color: #0A0A0A;
+            padding: 1rem 1.8rem;
+            box-shadow: 0 0.2rem 0.5rem 0 #4f4f4f;
+            position: fixed; /* Fixa o header no topo */
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        /* Estilo para o logo/ícone */
+        .icon a {
+            font-size: 3rem;
+            color: #FAFAFA;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .bts-container {
+            display: flex;
+            align-items: center;
+            justify-content: end;
+            gap: 2.2rem;
+        }
+        
+        /* Estilo do botão hambúrguer */
+        .menu-hamburguer {
+            display: block;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 1rem;
+            position: relative;
+            z-index: 1001; /* Z-index maior que o do menu */
+        }
+
+        .linha {
+            display: block;
+            width: 30px;
+            height: 3px;
+            background-color: #FAFAFA;
+            margin: 6px 0;
+            transition: 0.4s;
+        }
+        
+        /* Animação do ícone ao abrir */
+        .menu-hamburguer.ativo .linha:nth-child(1) {
+            transform: translateY(9px) rotate(45deg);
+        }
+
+        .menu-hamburguer.ativo .linha:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-hamburguer.ativo .linha:nth-child(3) {
+            transform: translateY(-9px) rotate(-45deg);
+        }
+        
+        /* Estilo do menu de navegação */
+        .menu-navegacao {
+            display: none; /* Esconde o menu por padrão */
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            position: fixed; /* Posiciona o menu na tela */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(10, 10, 10, 0.95); /* Fundo escuro para o menu aberto */
+            z-index: 1000;
+        }
+
+        .menu-navegacao.ativo {
+            display: flex; /* Mostra o menu quando a classe 'ativo' é adicionada */
+        }
+        
+        .menu-navegacao li {
+            margin: 2rem 0;
+        }
+
+        .menu-navegacao a {
+            color: #FAFAFA;
+            text-decoration: none;
+            font-size: 2.8rem;
+            font-weight: 500;
+            padding: 1rem 2rem;
+            border-radius: 1rem;
+            transition: background-color 0.3s;
+        }
+
+        .menu-navegacao a:hover,
+        .menu-navegacao a.active {
+            background-color: #FAFAFA;
+            color: #171717;
+        }
+        
+        /* Estilos adicionais para o conteúdo da página */
+        main {
+            padding-top: 100px; /* Espaço para o header fixo */
+            padding-bottom: 40px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 3rem;
+            border-radius: 8px;
+            box-shadow: 0 0.2rem 1.5rem rgba(0,0,0,0.1);
+        }
+
+        .section {
+            margin-bottom: 3.5rem;
+        }
+        
+        .section:last-child {
+            margin-bottom: 0;
+        }
+
+        .section h2 {
+            font-size: 2.8rem;
+            color: #0A0A0A;
+            margin-bottom: 1.5rem;
+            border-bottom: 3px solid #007BFF;
+            padding-bottom: 1rem;
+        }
+
+        .section p, .section li {
+            font-size: 1.6rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .section ul {
+            list-style-position: inside;
+            padding-left: 1rem;
+        }
+
+        .team-members {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .team-member img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+            border: 3px solid #ddd;
+        }
+
+        .team-member h3 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .team-member p {
+            font-size: 1.4rem;
+            color: #555;
+        }
+        
+        footer {
+            background-color: #0A0A0A;
+            color: #FAFAFA;
+            text-align: center;
+            padding: 2rem;
+            font-size: 1.4rem;
+        }
+        h2 {
+            color: #0A0A0A;
+            text-align: center;
+        }
