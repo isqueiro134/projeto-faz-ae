@@ -9,79 +9,80 @@
 </head>
 <body>
 
+    <div class="menu-overlay"></div>
+    <ul class="menu-lateral" id="menu-principal">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="sobrenos.html" class="active">Sobre</a></li>
+        <li><a href="servicos.html">Serviços</a></li>
+        <li><a href="contato.html">Contato</a></li>
+        <li class="separador"></li>
+        <li><a href="#" class="header-bts entrar btn-mobile">Entrar</a></li>
+        <li><a href="#" class="header-bts cadastrar btn-mobile">Cadastrar-se</a></li>
+    </ul>
+
     <header>
         <nav class="nav-header">
             <div class="icon">
                 <a href="home.html">Faz Aê</a>
             </div>
+            
             <div class="bts-container">
-                <button class="header-bts">Entrar</button>
-                <button class="header-bts">Cadastrar-se</button>
-            <div class="bts-container">
+                <ul class="menu-desktop">
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="sobrenos.html" class="active">Sobre</a></li>
+                    <li><a href="#">Serviços</a></li>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+
+                <button class="header-bts entrar">Entrar</button>
+                <button class="header-bts cadastrar">Cadastrar-se</button>
+
                 <button class="menu-hamburguer" aria-expanded="false" aria-controls="menu-principal">
                     <span class="linha"></span>
                     <span class="linha"></span>
                     <span class="linha"></span>
                 </button>
-                <ul class="menu-navegacao" id="menu-principal">
-                    <li><a href="home.html">Home</a></li>
-                    <li><a href="sobre.html" class="active">Sobre</a></li> <li><a href="servicos.html">Serviços</a></li>
-                    <li><a href="contato.html">Contato</a></li>
-                </ul>
             </div>
         </nav>
     </header>
 
     <main>
-        <div class="container">
-            <section class="section">
-                <h2>Nossa História</h2>
-                <p>
-                    O "Faz Aê" nasceu de uma necessidade comum no ambiente universitário: a busca por agilidade e praticidade na resolução de tarefas cotidianas e a procura por oportunidades flexíveis de trabalho. Percebemos que, de um lado, muitas pessoas precisavam de ajuda com pequenos serviços e, do outro, estudantes e freelancers talentosos buscavam formas de gerar renda de maneira rápida. Foi assim que idealizamos um hub centralizado para a economia dos serviços casuais.
-                </p>
-                <p>
-                    Nossa plataforma foi projetada para ser a ponte que conecta essas duas pontas. Queremos ser o ponto de encontro onde a necessidade encontra a solução, de forma simples, transparente e eficiente.
-                </p>
-            </section>
+        <section class="intro-section container">
+            <div class="intro-text">
+                <h1>A <span style="color: #4A00E0;">evolução</span> do trabalho começa pelas pessoas.</h1>
+                <p style="font-size: 1.8rem; color: #666;">No "Faz Aê", acreditamos em um ecossistema de serviços que valoriza a agilidade, a transparência e a autonomia de cada indivíduo.</p>
+            </div>
+            <div class="intro-image">
+                <img src="https://capitalist.com.br/wp-content/uploads/2024/01/coworking-shutterstock.jpg" alt="Pessoas trabalhando de forma colaborativa e flexível">
+            </div>
+        </section>
 
-            <section class="section">
-                <h2>Nossa Missão</h2>
-                <p>
-                    Conectar pessoas que precisam de ajuda em tarefas do dia a dia a freelancers que buscam oportunidades rápidas de trabalho. Facilitamos a contratação de serviços, promovemos agilidade nas conexões e oferecemos uma experiência prática e transparente tanto para quem contrata quanto para quem realiza os "bicos".
-                </p>
-            </section>
-
-            <section class="section">
-                <h2>Nossos Valores</h2>
-                <ul>
-                    <li><strong>Agilidade:</strong> Conexões rápidas para soluções imediatas.</li>
-                    <li><strong>Transparência:</strong> Processos claros e comunicação aberta entre contratantes e freelancers.</li>
-                    <li><strong>Oportunidade:</strong> Empoderar pessoas, oferecendo uma fonte de renda flexível.</li>
-                    <li><strong>Confiança:</strong> Um ambiente seguro e confiável para todas as transações.</li>
-                </ul>
-            </section>
-            
-            <section class="section">
-                <h2>Nossa Equipe</h2>
-                <div class="team-members">
-                    <div class="team-member">
-                        <img src="https://via.placeholder.com/150" alt="Foto do Membro 1">
-                        <h3>Nome do Aluno 1</h3>
-                        <p>Desenvolvedor Full-Stack</p>
-                    </div>
-                    <div class="team-member">
-                        <img src="https://via.placeholder.com/150" alt="Foto do Membro 2">
-                        <h3>Nome do Aluno 2</h3>
-                        <p>Designer UX/UI</p>
-                    </div>
-                    <div class="team-member">
-                        <img src="https://via.placeholder.com/150" alt="Foto do Membro 3">
-                        <h3>Nome do Aluno 3</h3>
-                        <p>Gerente de Projeto</p>
-                    </div>
+        <section class="section-how-it-works">
+            <div class="container">
+                <h2>Como Funciona?</h2>
+                <p class="section-subtitle">Anuncie seu trabalho facilmente, contrate freelancers e pague com segurança.</p>
+                <div class="how-it-works-grid">
+                    <div class="how-it-works-item"><div class="how-it-works-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m3.75 9v6m3-3H9m1.5-12H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" /></svg></div><h3>Publique uma Demanda</h3><p>Descreva o serviço que você precisa. Em poucos minutos, sua vaga estará visível para milhares de freelancers talentosos.</p></div>
+                    <div class="how-it-works-item"><div class="how-it-works-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m-7.5-2.962a3.75 3.75 0 015.962 0L14.25 6h3.75m-3.75 0h-6.375a3.375 3.375 0 01-3.375-3.375V1.5m5.25 12.375-3.75-3.75m3.75 3.75L11.25 15m3.75 3.75-3.75-3.75M3 12h6.75m-6.75 3h6.75m-6.75 3h6.75m9-15.75l-3.75-3.75M3 3l3.75 3.75m-3.75 0L6.75 3" /></svg></div><h3>Receba Propostas</h3><p>Analise o perfil, portfólio e avaliações dos candidatos. Converse pelo chat e escolha o profissional ideal para seu projeto.</p></div>
+                    <div class="how-it-works-item"><div class="how-it-works-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.286zm0 13.036h.008v.008h-.008v-.008z" /></svg></div><h3>Pague com Segurança</h3><p>O pagamento fica protegido em garantia e só é liberado para o freelancer quando você confirmar que o serviço foi entregue.</p></div>
                 </div>
-            </section>
-        </div>
+            </div>
+        </section>
+
+        <section class="section-faq">
+            <div class="container faq-layout">
+                <div class="faq-content">
+                    <h2>Dúvidas? <br> A gente ajuda.</h2>
+                    <p>Confira as respostas para as perguntas mais comuns. Se não encontrar o que procura, entre em contato com nosso suporte.</p>
+                    <a href="#" class="btn-contact">Falar com Suporte</a>
+                </div>
+                <div class="faq-accordion">
+                    <details class="faq-item"><summary class="faq-question">O cadastro na plataforma é gratuito?<span class="faq-icon">+</span></summary><div class="faq-answer"><p>Sim! O cadastro para contratantes e freelancers é totalmente gratuito. Cobramos apenas uma pequena taxa de serviço quando um trabalho é concluído com sucesso.</p></div></details>
+                    <details class="faq-item"><summary class="faq-question">Como funciona o pagamento em garantia?<span class="faq-icon">+</span></summary><div class="faq-answer"><p>O contratante deposita o valor do serviço na plataforma. O dinheiro fica retido com segurança e só é liberado para o freelancer quando o serviço for confirmado como concluído.</p></div></details>
+                    <details class="faq-item"><summary class="faq-question">Que tipo de serviços posso contratar ou oferecer?<span class="faq-icon">+</span></summary><div class="faq-answer"><p>Desde tarefas domésticas, como montar um móvel, até serviços digitais, como editar um vídeo ou criar um logo. As possibilidades são imensas.</p></div></details>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer>
@@ -89,14 +90,15 @@
     </footer>
 
     <script>
-        // JavaScript para o Menu Hambúrguer
         const menuHamburguer = document.querySelector('.menu-hamburguer');
-        const menuNavegacao = document.querySelector('.menu-navegacao');
-
-        menuHamburguer.addEventListener('click', () => {
-            menuHamburguer.classList.toggle('ativo');
-            menuNavegacao.classList.toggle('ativo');
-        });
+        const menuOverlay = document.querySelector('.menu-overlay');
+        function toggleMenu() {
+            document.body.classList.toggle('menu-aberto');
+            const isAberto = document.body.classList.contains('menu-aberto');
+            menuHamburguer.setAttribute('aria-expanded', isAberto);
+        }
+        menuHamburguer.addEventListener('click', toggleMenu);
+        menuOverlay.addEventListener('click', toggleMenu);
     </script>
 
 </body>
