@@ -5,40 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="../css/login.css">
-    <script src="../controller/loginController.js" defer></script>
 </head>
-
-<header>
-    <nav class="nav-header">
-        <div class="icon">
-            <a href="">Faz Aê</a>
-        </div>
-        <div class="bts-container">
-            <button class="header-bts">Entrar</button>
-            <button class="header-bts">Cadastrar-se</button>
-
-            <button class="menu-hamburguer" aria-expanded="false" aria-controls="menu-principal">
-                <span class="linha"></span>
-                <span class="linha"></span>
-                <span class="linha"></span>
-            </button>
-
-            <ul class="menu-navegacao" id="menu-principal">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Sobre</a></li>
-                <li><a href="#">Serviços</a></li>
-                <li><a href="#">Contato</a></li>
-            </ul>
-        </div>
-    </nav>
-</header>
 <body>
+    <div class="login-container">
+        <h2>Login</h2>
 
-    <h1 class="login-title">Login</h1>
+        <form id="loginForm">
+            <input type="text" id="user" placeholder="Usuário" required>
+            <input type="password" id="password" placeholder="Senha" required>
+            <button type="submit">Entrar</button>
+        </form>
 
-    <div>
-        <label for="email">E-mail</label>
-        <input type="email" id="email" placeholder="teste@gmail.com">
+        <a class="forgot" id="openRecover">Esqueci minha senha</a>
+        <p id="msg" class="msg"></p>
+
+        <div class="social-login">
+            <button id="googleLogin" class="google-btn">Entrar com Google</button>
+            <button id="linkedinLogin" class="linkedin-btn">Entrar com LinkedIn</button>
+        </div>
     </div>
+
+    <!-- Modal de Recuperação -->
+    <div id="recoverModal" class="modal">
+        <div class="modal-content">
+            <h3>Recuperar Senha</h3>
+
+            <input type="email" id="emailRecover" placeholder="Digite seu e-mail" required>
+
+            <button id="sendRecover">Enviar</button>
+            <button id="closeRecover" class="close">Fechar</button>
+
+            <p id="recoverMsg" class="msg"></p>
+        </div>
+    </div>
+
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script src="../controller/loginController.js"></script>
 </body>
 </html>
