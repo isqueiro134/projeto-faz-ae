@@ -4,62 +4,239 @@
     box-sizing: border-box;
 }
 
+/* 🎯 IMPORTAÇÃO DE FONTES e CONFIGURAÇÕES GLOBAIS (PADRÃO SOBRENOS) */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-
-body {
-    font-family: "Roboto", sans-serif;
-}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
 
 html {
     font-size: 62.5%;
-    /* 10px */
+    scroll-behavior: smooth;
 }
 
+body {
+    font-family: "Roboto", sans-serif;
+    background-color: #FFFFFF; /* Cor de fundo padrão do 'sobrenos.css' */
+    color: #333;
+    line-height: 1.6;
+    font-size: 1.6rem;
+}
+
+body.menu-aberto {
+    overflow: hidden;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Estilos de Título Padrão */
+.section-title { 
+    font-family: "Montserrat", sans-serif; 
+    font-size: 3.8rem; 
+    color: #1A1A1A; 
+    margin-bottom: 2.5rem; 
+    text-align: center; 
+    font-weight: 700; 
+    padding-top: 5rem;
+}
+
+.section-subtitle {
+    font-size: 1.8rem; 
+    color: #6c757d; 
+    max-width: 700px; 
+    margin: 1rem auto 5rem auto; 
+    text-align: center;
+}
+
+/* ========================================= */
+/* ================ HEADER (PADRÃO SOBRENOS) ================= */
+/* ========================================= */
 header {
-    background-color: #0A0A0A;
-    padding: 1rem 1.8rem;
-    box-shadow: 0 0.2rem 0.5rem 0 #4f4f4f;
+    background-color: #FFFFFF;
+    padding: 1.5rem 3rem;
+    box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.08);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
 }
 
 .nav-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.icon a {
+    font-family: "Montserrat", sans-serif;
+    font-size: 3.2rem;
+    color: #4A00E0;
+    text-decoration: none;
+    font-weight: 700;
 }
 
 .bts-container {
     display: flex;
     align-items: center;
-    justify-content: end;
-    gap: 2.2rem;
+    gap: 1.5rem;
 }
 
+.menu-desktop { 
+    display: none; 
+} 
+
 .header-bts {
-    color: #FAFAFA;
-    background-color: #0A0A0A;
-    border: 1px;
-    border-radius: 1rem;
-    font-size: 1.8rem;
+    font-family: "Roboto", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    padding: 0.9rem 1.8rem;
+    border-radius: 0.8rem;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none; 
+}
+
+.header-bts.entrar {
+    background-color: #F0F0F0;
+    color: #333;
+}
+
+.header-bts.entrar:hover {
+    background-color: #e0e0e0;
+}
+
+.header-bts.cadastrar {
+    background-color: #4A00E0;
+    color: #FFFFFF;
+}
+
+.header-bts.cadastrar:hover {
+    background-color: #3b00b3;
+}
+
+.menu-hamburguer {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1003;
     padding: 1rem;
 }
 
-.header-bts:hover {
-    background-color: #424242;
+.linha {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: transform 0.4s, opacity 0.4s;
 }
 
+
+/* ========================================= */
+/* ========= LÓGICA DO MENU LATERAL (PADRÃO SOBRENOS) ======== */
+/* ========================================= */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+    z-index: 1001;
+}
+
+.menu-navegacao {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 280px;
+    height: 100%;
+    background-color: #FFFFFF;
+    box-shadow: -0.5rem 0 1.5rem rgba(0, 0, 0, 0.1);
+    transform: translateX(100%);
+    transition: transform 0.4s ease-in-out;
+    z-index: 1002;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    list-style: none;
+    padding: 2rem;
+}
+
+.menu-navegacao li {
+    width: 100%;
+    text-align: center;
+}
+
+.menu-navegacao a {
+    color: #333;
+    text-decoration: none;
+    font-size: 2.2rem;
+    font-weight: 500;
+    padding: 1.2rem 2rem;
+    border-radius: 0.8rem;
+    display: block;
+    width: 100%;
+}
+
+.menu-navegacao a.active {
+    color: #4A00E0;
+}
+
+body.menu-aberto .menu-navegacao {
+    transform: translateX(0);
+}
+
+body.menu-aberto .menu-overlay {
+    opacity: 1;
+    visibility: visible;
+}
+
+body.menu-aberto .menu-hamburguer .linha:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+body.menu-aberto .menu-hamburguer .linha:nth-child(2) {
+    opacity: 0;
+}
+
+body.menu-aberto .menu-hamburguer .linha:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+
+/* ========================================= */
+/* ============== CONTEÚDO PRINCIPAL E CARDS PADRÃO ============== */
+/* ========================================= */
 .main-header {
     display: flex;
     flex-direction: column;
     text-align: center;
     gap: 3rem;
-    margin: 7.5rem 38rem 0 70rem;
+    padding: 10rem 2rem 0 2rem;
+    margin: 0 auto;
+    max-width: 800px;
 }
 
 .main-content {
     display: flex;
     flex-direction: column;
     gap: 11rem;
-    margin: 7.5rem 20rem 10rem 60rem;
+    padding: 7.5rem 2rem 10rem 2rem;
+    margin: 0 auto;
+    max-width: 1100px;
 }
 
 .cards-container {
@@ -69,69 +246,223 @@ header {
 }
 
 .card {
-    padding: 2rem;
-    color: white;
-    background-color: #5D5D5D;
-    border: 1px solid rgba(255, 255, 255, 0.95);
+    padding: 3rem;
+    color: #1A1A1A; 
+    background-color: #F8F9FA; 
+    border: 1px solid #E0E0E0; 
     border-radius: 1rem;
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.05); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Estilo do botão hambúrguer */
-.menu-hamburguer {
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.8rem 2rem rgba(74, 0, 224, 0.1);
+}
+
+.card h3 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 2.4rem;
+    margin-bottom: 1.5rem;
+    color: #4A00E0;
+}
+
+.home-bts {
+    background-color: #4A00E0;
+    color: #FFFFFF;
+    padding: 1.2rem 2.8rem;
+    font-size: 1.6rem;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 0.8rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    border: none;
+    cursor: pointer;
+    display: inline-block; 
+}
+
+.home-bts:hover {
+    background-color: #3b00b3;
+    transform: translateY(-3px);
+}
+
+
+/* ========================================= */
+/* =========== ESTILOS DE VISUALIZAÇÃO DE SERVIÇOS =========== */
+/* ========================================= */
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    padding: 3rem 0;
+}
+
+.service-item {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.service-icon {
+    margin: 0 auto 2.5rem auto;
+    width: 80px;
+    height: 80px;
+    background-color: #FFFFFF;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0.5rem 1.5rem rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-icon i {
+    font-size: 40px; 
+    color: #4A00E0; 
+}
+
+.service-item:hover .service-icon {
+    transform: translateY(-10px);
+    box-shadow: 0 1rem 2rem rgba(74, 0, 224, 0.15);
+}
+
+.service-item h3 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 2.2rem;
+    color: #1A1A1A;
+    margin-bottom: 1.5rem;
+}
+
+.service-item p {
+    font-size: 1.6rem;
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    flex-grow: 1; 
+}
+
+.service-item .home-bts {
+    margin-top: auto; 
+    width: 100%;
+}
+
+.key-features {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 2rem;
+    text-align: left;
+    width: 80%; 
+    margin-left: 10%;
+}
+
+.key-features li {
+    font-size: 1.5rem;
+    color: #555;
+    margin-bottom: 0.8rem;
+    position: relative;
+    padding-left: 25px;
+}
+
+.key-features li::before {
+    content: '\2713'; 
+    color: #4A00E0;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    font-size: 1.6rem;
+}
+
+/* ========================================= */
+/* =========== ESTILOS DE GERENCIAMENTO (FORMULÁRIO E TABELA CRUD) =========== */
+/* ========================================= */
+#form-servico label {
     display: block;
-    /* Garante que o botão aparece */
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    font-size: 1.5rem;
+    color: #4A00E0;
+}
+#form-servico input[type="text"],
+#form-servico textarea {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    font-size: 1.6rem;
+    font-family: "Roboto", sans-serif;
+    box-sizing: border-box; /* Garante que o padding não aumente a largura */
+}
+#form-servico textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+#tabela-servicos {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1.5rem;
+}
+#tabela-servicos th, #tabela-servicos td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+#tabela-servicos th {
+    background-color: #f8f9fa;
+    color: #4A00E0;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+}
+.btn-acao {
     background: none;
     border: none;
     cursor: pointer;
-    padding: 10px;
-    position: relative;
-    z-index: 10;
-    /* Para ficar por cima de outros elementos */
+    color: #4A00E0;
+    margin-right: 1rem;
+    font-size: 1.6rem;
+    transition: color 0.2s;
+}
+.btn-acao:hover {
+    color: #3b00b3;
+}
+.btn-excluir {
+    color: #E00000;
+}
+.btn-excluir:hover {
+    color: #a00000;
 }
 
-.linha {
-    display: block;
-    width: 30px;
-    height: 3px;
-    background-color: #FAFAFA;
-    margin: 6px 0;
-    transition: transform 0.3s ease-in-out;
+
+/* ========================================= */
+/* ============== RESPONSIVIDADE ============== */
+/* ========================================= */
+@media (max-width: 992px) {
+
+    .header-bts:not(.menu-navegacao a) { 
+        display: none;
+    }
+
+    .menu-hamburguer {
+        display: block;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
-/* Estilo do menu de navegação */
-.menu-navegacao {
-    display: none;
-    /* Esconde o menu por padrão */
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    position: fixed;
-    /* Posiciona o menu na tela */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.95);
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    z-index: 5;
-}
+@media (max-width: 768px) {
+    html {
+        font-size: 58%;
+    }
 
-.menu-navegacao.ativo {
-    display: flex;
-    /* Mostra o menu quando a classe 'ativo' é adicionada */
-}
-
-/* Animação do ícone ao abrir */
-.menu-hamburguer.ativo .linha:nth-child(1) {
-    transform: translateY(9px) rotate(45deg);
-}
-
-.menu-hamburguer.ativo .linha:nth-child(2) {
-    opacity: 0;
-}
-
-.menu-hamburguer.ativo .linha:nth-child(3) {
-    transform: translateY(-9px) rotate(-45deg);
+    header {
+        padding: 1.5rem;
+    }
+    
+    #painel-servicos h2 {
+        text-align: center !important;
+    }
 }

@@ -5,19 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Faz Aê</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
     <link rel="stylesheet" href="../css/home.css">
     <script src="../controller/homeController.js" defer></script>
 </head>
 
 <body>
+    <div class="menu-overlay"></div>
+    
     <header>
         <nav class="nav-header">
             <div class="icon">
                 <a href="">Faz Aê</a>
             </div>
             <div class="bts-container">
-                <button class="header-bts">Entrar</button>
-                <button class="header-bts">Cadastrar-se</button>
+                <a href="#" class="header-bts entrar">Entrar</a>
+                <a href="#" class="header-bts cadastrar">Cadastrar-se</a>
 
                 <button class="menu-hamburguer" aria-expanded="false" aria-controls="menu-principal">
                     <span class="linha"></span>
@@ -28,7 +32,7 @@
                 <ul class="menu-navegacao" id="menu-principal">
                     <li><a href="#">Home</a></li>
                     <li><a href="sobrenos.html">Sobre</a></li>
-                    <li><a href="#">Serviços</a></li>
+                    <li><a href="#servicos">Serviços</a></li>
                     <li><a href="#">Contato</a></li>
                 </ul>
             </div>
@@ -56,73 +60,76 @@
                         <div class="card-description">
                             <p>Ofereço serviços de limpeza residencial e comercial de alta qualidade, com foco em
                                 eficiência, atenção aos detalhes e total confiança. Meu objetivo é transformar seu
-                                espaço em um ambiente impecável, organizado e acolhedor, liberando seu tempo para o que
-                                realmente importa.</p>
+                                espaço em um ambiente impecável, organizado e acolhedor.</p>
                         </div>
                     </div>
-                    <div class="card">
-                        <div class="card-title">
-                            <h3>Serviços de Limpeza e Organização</h3>
-
-                            <p>Avaliação Média</p>
-                        </div>
-                        <div class="card-description">
-                            <p>Ofereço serviços de limpeza residencial e comercial de alta qualidade, com foco em
-                                eficiência, atenção aos detalhes e total confiança. Meu objetivo é transformar seu
-                                espaço em um ambiente impecável, organizado e acolhedor, liberando seu tempo para o que
-                                realmente importa.</p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-title">
-                            <h3>Serviços de Limpeza e Organização</h3>
-                            <p>Avaliação Média</p>
-                        </div>
-                        <div class="card-description">
-                            <p>Ofereço serviços de limpeza residencial e comercial de alta qualidade, com foco em
-                                eficiência, atenção aos detalhes e total confiança. Meu objetivo é transformar seu
-                                espaço em um ambiente impecável, organizado e acolhedor, liberando seu tempo para o que
-                                realmente importa.</p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-title">
-                            <h3>Serviços de Limpeza e Organização</h3>
-                            <p>Avaliação Média</p>
-                        </div>
-                        <div class="card-description">
-                            <p>Ofereço serviços de limpeza residencial e comercial de alta qualidade, com foco em
-                                eficiência, atenção aos detalhes e total confiança. Meu objetivo é transformar seu
-                                espaço em um ambiente impecável, organizado e acolhedor, liberando seu tempo para o que
-                                realmente importa.</p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-title">
-                            <h3>Serviços de Limpeza e Organização</h3>
-                            <p>Avaliação Média</p>
-                        </div>
-                        <div class="card-description">
-                            <p>Ofereço serviços de limpeza residencial e comercial de alta qualidade, com foco em
-                                eficiência, atenção aos detalhes e total confiança. Meu objetivo é transformar seu
-                                espaço em um ambiente impecável, organizado e acolhedor, liberando seu tempo para o que
-                                realmente importa.</p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-title">
-                            <h3>Serviços de Limpeza e Organização</h3>
-                            <p>Avaliação Média</p>
-                        </div>
-                        <div class="card-description">
-                            <p>Ofereço serviços de limpeza residencial e comercial de alta qualidade, com foco em
-                                eficiência, atenção aos detalhes e total confiança. Meu objetivo é transformar seu
-                                espaço em um ambiente impecável, organizado e acolhedor, liberando seu tempo para o que
-                                realmente importa.</p>
-                        </div>
-                    </div>
+                    <div class="card">...</div>
+                    <div class="card">...</div>
+                    <div class="card">...</div>
+                    <div class="card">...</div>
+                    <div class="card">...</div>
                 </div>
             </div>
+            <section id="servicos">
+                <div class="container">
+                    <h2 class="section-title">Meus Serviços Freelancer</h2>
+                    <p class="section-subtitle">
+                        Transforme suas ideias em realidade digital. Escolha o serviço ideal para o seu projeto.
+                    </p>
+
+                    <div class="services-grid" id="servicos-visualizacao">
+                        <p style="text-align: center; color: #6c757d;">
+                            Carregando serviços... Se não houver nenhum, adicione um no painel de gerenciamento.
+                        </p>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="painel-servicos" class="container" style="padding: 5rem 0 10rem 0;">
+                <h2 style="text-align: left; margin-bottom: 3rem;">Gerenciamento de Serviços (CRUD)</h2>
+                
+                <button id="btn-novo-servico" class="home-bts" style="margin-bottom: 2rem;">
+                    + Criar Novo Serviço
+                </button>
+
+                <div id="form-servico-container" class="card" style="display: none; padding: 3rem; margin-bottom: 3rem;">
+                    <h3 id="form-titulo">Criar Novo Serviço</h3>
+                    <form id="form-servico">
+                        <input type="hidden" id="service-id" value=""> 
+
+                        <label for="titulo">Título do Serviço:</label>
+                        <input type="text" id="titulo" required placeholder="Ex: Desenvolvimento Front-end">
+
+                        <label for="descricao">Descrição:</label>
+                        <textarea id="descricao" required placeholder="Detalhe o que será entregue, o valor e o diferencial."></textarea>
+
+                        <label for="features">Características Chave (Separe por vírgulas):</label>
+                        <input type="text" id="features" placeholder="Ex: Design responsivo, SEO básico, Integração de API">
+
+                        <label for="icone-classe">Classe do Ícone (Font Awesome):</label>
+                        <input type="text" id="icone-classe" required placeholder="Ex: fas fa-code">
+                        
+                        <div style="display: flex; gap: 1.5rem; margin-top: 2.5rem;">
+                            <button type="submit" class="home-bts" id="btn-salvar-servico">Salvar Serviço</button>
+                            <button type="button" class="header-bts entrar" id="btn-cancelar" onclick="fecharFormulario()">Cancelar</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="card" style="padding: 2rem;">
+                    <table id="tabela-servicos">
+                        <thead>
+                            <tr>
+                                <th>Título</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            </tbody>
+                    </table>
+                </div>
+            </section>
+            
         </main>
         <footer>
 
